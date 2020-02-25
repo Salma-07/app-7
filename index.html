@@ -25,7 +25,177 @@ blah, blah, blah, blah
 
    <head> 
       
-	   PUT YOUR OLD CODE IN HERE
+	   <!DOCTYPE html> 
+<html> 
+<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
+Tim Riedel
+Salma Amor 
+ 
+Further Information:
+http://cns.utexas.edu/fri
+ 
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+To diagnose between an allergy and cold
+ 
+Known Issues:
+Indivisual is not feeling well and will utilize this simple app to self diagnose himself 
+https://www.w3schools.com/w3css/default.asp
+https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+-->
+	
+   <head> 
+      <title>Cold or Allergies?</title>  <!-- title of app-->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
 	   
-   </body>
+    
+	<script>
+        var allergy_count = 0; //results starting at 0 
+        var cold_count = 0; //results starting at 0
+	var resultText = document.getElementById ("results"); //intended for the results page that displays the percentages
+	
+        function allergyAdd(){
+            allergy_count = allergy_count + 1; //function adds one to the allergy value 
+		
+        }
+
+        function coldAdd(){ // function adds one to the cold value
+            cold_count = cold_count + 1;
+        }
+	var allergyPercent=0 //allergy variable is 0% @ beginning 
+	var coldPercent=0 // cold variable 0% @ beginning 
+	function results(){
+		var allergyPercent= allergy_count/6 *100; // deleted "(allergy_count + cold_count)" multiple of 100 for percentage; variables declared
+		var coldPercent= cold_count /6*100; // deleted "(allergy_count + cold_count)" multiple of 100 for percentage; variables declared
+		var resultText = document.getElementById("results");
+		resultText.innerHTML = "Percent it is allergies =" + allergy_count /6 *100 + "<br> Percent it is a cold =" + cold_count /6 *100; //# of cold and allergy tallied converted into percentage and added together; coding for results did not appear to work 
+  
+	}
+	</script>
+</head>
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {  
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1> <!-- title of app-->
+</div>
+	
+<div id="content" class="w3-container"> <!-- header format and classification-->
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-red"> Go to Page One </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+<div class="page" id="one"> <!-- page one identification-->
+	<div id="header" class="w3-container w3-flat-carrot"> <!-- header of page one-->
+		<h1>Question #1</h1> <!-- question 1 header-->
+	</div> 
+	
+    	<div id="content" class="w3-container"> <!-- identifying content of page one-->
+        	<p>Are your eyes itchy or watery?</p> <!-- question one -->
+	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-green"> Yes </a> <!-- answer choice "yes"; takes you to page two; documents one tally point for allergy -->
+	<a href="#two" onclick="coldAdd();" class="w3-btn w3-red"> No </a> <!-- answer choice "no"; takes you to page two; documents one tally point for cold -->
+	</div> <!-- end of page one -->
+ 
+</div> <!-- new page -->
+	
+<div class="page" id="two">  <!-- page two identification-->
+	<div id="header" class="w3-container w3-flat-carrot"> <!-- header of page two-->
+		<h1>Question #2</h1> <!-- question 2 header-->
+	</div>
+	<div id="content" class="w3-container"> <!-- identifying content of page two-->
+	<p>Do you have a fever?</p> <!-- question two -->
+	<a href="#three" onclick="coldAdd();" class="w3-btn w3-green"> Yes </a> <!-- answer choice "yes"; takes you to page three; documents one tally point for cold -->
+	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-red"> No </a> <!-- answer choice "no"; takes you to page three; documents one tally point for allergy -->
+	</div>
+	
+</div>	<!-- new page -->
+	
+<div class="page" id="three"> <!-- page three identification-->
+	<div id="header" class="w3-container w3-flat-carrot">  <!-- header of page three-->
+		<h1>Question #3</h1> <!-- question 3 header-->
+	</div>
+	<div id="content" class="w3-container"> <!-- identifying content of page three-->
+	<p>Do you have a sore throat?</p> <!-- question three -->
+	<a href="#four" onclick="coldAdd();"class="w3-btn w3-green"> Yes </a> <!-- answer choice "yes"; takes you to page four; documents one tally point for cold -->
+	<a href="#four" onclick="allergyAdd();" class="w3-btn w3-red"> No </a> <!-- answer choice "no"; takes you to page four; documents one tally point for allergy -->
+	</div>
+	
+</div> <!-- new page -->
+	
+<div class="page" id="four">  <!-- page four identification-->
+	<div id="header" class="w3-container w3-flat-carrot"> <!-- header of page four-->
+		<h1>Question #4</h1> <!-- question 4 header-->
+	</div>
+	<div id="content" class="w3-container"> <!-- identifying content of page four-->
+	<p>Are your sytmptoms seasonal or chronic?</p> <!-- question four -->
+	<a href="#five" onclick="allergyAdd();" class="w3-btn w3-green"> Yes </a> <!-- answer choice "yes"; takes you to page five; documents one tally point for allergy -->
+	<a href="#five" onclick="coldAdd();" class="w3-btn w3-red"> No </a> <!-- answer choice "no"; takes you to page five; documents one tally point for cold -->
+	</div>
+	
+</div> <!-- new page -->
+
+<div class="page" id="five"> <!-- page five identification-->
+	<div id="header" class="w3-container w3-flat-carrot"> <!-- header of page five-->
+		<h1> Results Processing </h1> <!-- button to view results-->
+	</div>	
+	<div id="content" class="w3-container">
+	<a href= "#six" onclick= "results();" class="w3-btn w3-green"> Click here to View Results </a> <!-- takes you to page 6-->
+	
+<div class="page" id="six"> <!-- page 6-->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Your Results!</h1> <!-- shows results -->
+	<p id="results"></p>
+<p> Page 6 </p>
+	</div>
+</div>
+
+
+		
+		
+		
+		
+		
+		
+<footer class="w3-bottom w3-container w3-flat-carrot"> <!-- footer-->
+	<p>DIY!</p> 
+</footer> 
+		
+</body>
 </html>
+	   
