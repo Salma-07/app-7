@@ -103,7 +103,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
                       data: [Allergies_count, Flu_count, Covid_19_count, Cold_count],
                     }]
                 },
-	
+	options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true 
+                            }
+
+                        }]
+                    }
+                }   
+          })
+      }
 	</script>
 </head>
 
