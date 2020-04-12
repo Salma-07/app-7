@@ -192,15 +192,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>	<!-- new page -->
 	
 <div class="page" id="three"> <!-- page three identification-->
-	<div id="header" class="w3-container w3-flat-carrot">  <!-- header of page three-->
-		<h1>Question #3</h1> <!-- question 3 header-->
-	</div>
-	<div id="content" class="w3-container"> <!-- identifying content of page three-->
-	<p>Are you experiencing a runny nose?</p> <!-- question three -->
-	<a href="#four" onclick="fluAdd();"class="w3-btn w3-green"> Yes </a> <!-- answer choice "yes"; takes you to page four; documents one tally point for flu -->
-	<a href="#four" onclick="strepAdd();" class="w3-btn w3-red"> No </a> <!-- answer choice "no"; takes you to page four; documents one tally point for strep -->
-	</div>
-	
+  <div id="header" class="w3-container w3-flat-carrot">  <!-- header of page three-->
+      <h1>Question #3</h1> <!-- question 3 header-->
+  </div>
+  <div id="content" class="w3-container"> <!-- identifying content of page three-->
+  <p>Are you sneezing more than usual?</p> <!-- question three -->
+  <a href="#four" onclick="ColdAdd(); AllergiesAdd();"class="w3-btn w3-green"> Yes </a> <!-- answer choice "yes"; takes you to page four; documents one tally point for flu -->
+  <a href="#four" onclick="Covid_19Add(); FluAdd();" class="w3-btn w3-red"> No </a> <!-- answer choice "no"; takes you to page four; documents one tally point for strep -->
+  </div>
+  
 </div> <!-- new page -->
 	
 <div class="page" id="four">  <!-- page four identification-->
