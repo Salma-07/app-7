@@ -68,16 +68,22 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   var resultText = document.getElementById ("results"); //intended for the results page that displays the percentages
 	
         function Covid_19Add(){
-            strep_count = strep_count + 1; //function adds one to the strep value 
+          Covid_19_count += 1; //function adds one to the strep value 
+        console.log("Covid_19", Covid_19_count) 
+      }
+    function ColdAdd(){
+          Cold_count += 1; //function adds one to the strep value 
+        console.log("Cold", Cold_count)
+      }
+      function FluAdd(){ // function adds one to the flu value
+          Flu_count += 1;
+        console.log("Flu", Flu_count)
+      }
+      function AllergiesAdd(){ // function adds one to the flu value
+          Allergies_count += 1;
+          console.log("Allergies", Allergies_count)
+      }
 		
-        }
-	function Covid_19Add(){
-            strep_count = strep_count + 1; //function adds one to the strep value 
-		
-        }
-        function fluAdd(){ // function adds one to the flu value
-            flu_count = flu_count + 1;
-        }
 	var strepPercent=0 //strep variable is 0% @ beginning 
 	var fluPercent=0 // flu variable 0% @ beginning 
 	function results(){
