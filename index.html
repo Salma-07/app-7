@@ -84,15 +84,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
           console.log("Allergies", Allergies_count)
       }
 		
-	var strepPercent=0 //strep variable is 0% @ beginning 
-	var fluPercent=0 // flu variable 0% @ beginning 
-	function results(){
-		var strepPercent= strep_count/6 *100; // deleted "(allergy_count + cold_count)" multiple of 100 for percentage; variables declared
-		var coldPercent= flu_count /6*100; // deleted "(allergy_count + cold_count)" multiple of 100 for percentage; variables declared
-		var resultText = document.getElementById("results");
-		resultText.innerHTML = "Percent it is strep =" + strep_count /6 *100 + "<br> Percent it is a flu =" + flu_count /6 *100; //# of flu and strep tallied converted into percentage and added together; coding for results did not appear to work 
-  
-	}
+	function showResults() {
+          var myAnswers = {
+              "Allergies":Allergies_count,
+              "Flu":Flu_count,
+              "Covid_19":Covid_19_count, 
+              "Cold":Cold_count,
+	
 	</script>
 </head>
 
