@@ -90,6 +90,19 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
               "Flu":Flu_count,
               "Covid_19":Covid_19_count, 
               "Cold":Cold_count,
+		 
+	  }
+	  console.log(myAnswers);
+          var ctx = document.getElementById('myChart').getContext('2d');
+          var myChart_chart = new Chart(ctx, {
+              type: 'bar', 
+              data: {
+                  labels: ['Covid_19', 'Cold', 'Flu', 'Allergies'],
+                  datasets: [{
+                      label: 'data',
+                      data: [Allergies_count, Flu_count, Covid_19_count, Cold_count],
+                    }]
+                },
 	
 	</script>
 </head>
